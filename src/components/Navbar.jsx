@@ -32,7 +32,7 @@ export default function Navbar() {
             <FileText size={15} className="text-white" strokeWidth={2.5} />
           </div>
           <span className="font-bold text-gray-900 text-lg tracking-tight select-none">
-            my<span className="text-brand">PDF</span>
+            my<span className="text-brand">PDF</span>doc
           </span>
         </button>
 

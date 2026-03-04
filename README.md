@@ -1,4 +1,4 @@
-# myPDF
+# myPDFdoc
 
 > Edit PDFs safely, entirely in your browser. No uploads. No servers. 100% private.
 
@@ -8,7 +8,7 @@ Built by [Brian Gachichio](https://www.linkedin.com/in/briangachichio/).
 
 ## What it does
 
-myPDF is a privacy-first, client-side PDF editor. Every operation — signing, compressing, merging, splitting, annotating — happens locally on your device. Your files never leave your browser.
+myPDFdoc is a privacy-first, client-side PDF editor. Every operation — signing, compressing, merging, splitting, annotating — happens locally on your device. Your files never leave your browser.
 
 **Tools available:**
 - ✍️ **Sign** — draw, type, or upload your signature
@@ -100,7 +100,7 @@ On mobile: open the site in Chrome (Android) or Safari (iOS), tap **Share → Ad
 ## Repository
 
 ```
-mypdf/
+mypdfdoc/
 ├── public/
 │   ├── favicon.svg
 │   ├── apple-touch-icon.png
@@ -119,4 +119,4 @@ mypdf/
 
 ## Support
 
-If myPDF saves you time, [buy Brian a coffee ☕](https://paystack.shop/pay/gachichio)
+If myPDFdoc saves you time, [buy Brian a coffee ☕](https://paystack.shop/pay/gachichio)

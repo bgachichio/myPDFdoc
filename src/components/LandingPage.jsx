@@ -258,7 +258,7 @@ export function LandingPage({ onGetStarted }) {
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
               Most online PDF tools upload your files to remote servers.
-              myPDF is different — everything happens locally in your browser.
+              myPDFdoc is different — everything happens locally in your browser.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {privacyPoints.map((point) => (

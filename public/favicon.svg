@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#237352"/>
-  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="16" font-family="Inter,sans-serif" font-weight="700">P</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="90" fill="#ffffff"/>
+  <rect width="512" height="512" rx="90" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+  <text x="46" y="276" text-anchor="start"
+        font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="72" fill="#111111">my</text>
+  <text x="166" y="276" text-anchor="start"
+        font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="72" fill="#237352">PDF</text>
+  <text x="321" y="276" text-anchor="start"
+        font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="72" fill="#111111">doc</text>
 </svg>

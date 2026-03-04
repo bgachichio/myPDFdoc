@@ -612,57 +612,68 @@ export default function EditorPage() {
         </div>
       </div>
 
-      {/* ── Mobile bottom toolbar — quick tool access + apply/download ── */}
-      <div className="md:hidden bg-white border-t border-gray-100 px-3 py-2 flex items-center gap-2 shrink-0">
-        {/* Tools button */}
+      {/* ── Mobile bottom toolbar ── */}
+      <div className="md:hidden bg-white border-t border-gray-200 px-3 pb-safe flex items-stretch gap-2 shrink-0"
+           style={{ paddingTop: '10px', paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}>
+
+        {/* ── Tools button ── */}
         <button
           onClick={() => setSidebarOpen(true)}
-          className="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl text-gray-500 hover:bg-brand-50 hover:text-brand transition-colors"
+          className="flex flex-col items-center justify-center gap-1.5 flex-1 py-2 rounded-2xl
+                     bg-gray-100 text-gray-600 active:bg-gray-200 transition-colors"
         >
-          <Menu size={18} strokeWidth={2} />
-          <span className="text-[10px] font-semibold leading-none">Tools</span>
+          <Menu size={24} strokeWidth={2.2} />
+          <span className="text-[11px] font-bold leading-none tracking-wide uppercase">Tools</span>
         </button>
 
-        {/* Active tool button — opens panel */}
-        {activeDef && (
-          <button
-            onClick={() => setToolPanelOpen(true)}
-            className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-colors
-              ${toolPanelOpen ? 'bg-brand text-white' : 'text-gray-500 hover:bg-brand-50 hover:text-brand'}`}
-          >
-            <activeDef.icon size={18} strokeWidth={2} />
-            <span className="text-[10px] font-semibold leading-none">{activeDef.label}</span>
-          </button>
-        )}
-
-        <div className="flex-1" />
-
-        {/* Pending badge */}
-        {hasPending && !applying && !applyDone && (
-          <span className="text-xs bg-amber-50 text-amber-700 border border-amber-100 px-2 py-1 rounded-full font-medium shrink-0">
-            {overlays.length > 0 ? `${overlays.length} unsaved` : 'Drawing…'}
+        {/* ── Active tool pill ── */}
+        <button
+          onClick={() => setToolPanelOpen(true)}
+          className={`flex flex-col items-center justify-center gap-1.5 flex-1 py-2 rounded-2xl transition-all
+            ${activeDef
+              ? toolPanelOpen
+                ? 'bg-brand text-white shadow-md'
+                : 'bg-brand-50 text-brand border-2 border-brand/20'
+              : 'bg-gray-100 text-gray-300'}`}
+        >
+          {activeDef
+            ? <activeDef.icon size={24} strokeWidth={2.2} />
+            : <FileText size={24} strokeWidth={2.2} />
+          }
+          <span className="text-[11px] font-bold leading-none tracking-wide uppercase truncate max-w-[70px]">
+            {activeDef ? activeDef.label : 'Select'}
           </span>
-        )}
+        </button>
 
-        {/* Apply & Save */}
-        {hasPending && (
-          <button onClick={doApply} disabled={applying}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl shrink-0
-                       bg-green-600 text-white text-xs font-semibold
-                       transition-colors disabled:opacity-60">
-            {applying
-              ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              : applyDone ? <CheckCircle2 size={13} /> : '✓'
-            }
-            {applying ? 'Saving…' : applyDone ? 'Saved!' : 'Apply & Save'}
-          </button>
-        )}
+        {/* ── Apply & Save — glows when pending ── */}
+        <button
+          onClick={doApply}
+          disabled={!hasPending || applying}
+          className={`flex flex-col items-center justify-center gap-1.5 flex-1 py-2 rounded-2xl transition-all
+            ${hasPending
+              ? 'bg-green-600 text-white shadow-lg active:bg-green-700'
+              : 'bg-gray-100 text-gray-300'}`}
+        >
+          {applying
+            ? <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            : applyDone
+              ? <CheckCircle2 size={24} />
+              : <span className="text-xl font-black leading-none">✓</span>
+          }
+          <span className="text-[11px] font-bold leading-none tracking-wide uppercase">
+            {applying ? 'Saving…' : applyDone ? 'Saved!' : 'Save'}
+          </span>
+        </button>
 
-        {/* Download */}
-        <a href={fileUrl} download={fileName}
-          className="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl text-gray-500 hover:bg-brand-50 hover:text-brand transition-colors">
-          <Download size={18} strokeWidth={2} />
-          <span className="text-[10px] font-semibold leading-none">Save</span>
+        {/* ── Download ── */}
+        <a
+          href={fileUrl}
+          download={fileName}
+          className="flex flex-col items-center justify-center gap-1.5 flex-1 py-2 rounded-2xl
+                     bg-gray-100 text-gray-600 active:bg-gray-200 transition-colors"
+        >
+          <Download size={24} strokeWidth={2.2} />
+          <span className="text-[11px] font-bold leading-none tracking-wide uppercase">Download</span>
         </a>
       </div>
 

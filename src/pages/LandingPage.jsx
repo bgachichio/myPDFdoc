@@ -78,7 +78,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="fade-in-2 text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
-            No uploads. No accounts. No servers. myPDF runs entirely on your device —
+            No uploads. No accounts. No servers. myPDFdoc runs entirely on your device —
             so your files stay yours, always.
           </p>
 
@@ -113,11 +113,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Why myPDF ────────────────────────────────────── */}
+      {/* ── Why myPDFdoc ────────────────────────────────────── */}
       <section id="how-it-works" className="py-16 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Why myPDF?</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Why myPDFdoc?</h2>
             <p className="text-gray-500 max-w-md mx-auto text-sm">
               Built privacy-first. Your documents are never uploaded anywhere.
             </p>
@@ -196,7 +196,7 @@ export default function LandingPage() {
             Your privacy is non-negotiable.
           </h2>
           <p className="text-white/75 leading-relaxed mb-8 text-sm sm:text-base">
-            myPDF processes everything in your browser. No file ever touches a server —
+            myPDFdoc processes everything in your browser. No file ever touches a server —
             because we don't have any.
           </p>
           <div className="flex flex-wrap gap-2 justify-center">

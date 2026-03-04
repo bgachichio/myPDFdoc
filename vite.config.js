@@ -11,9 +11,9 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'icons/*.png'],
 
       manifest: {
-        name: 'myPDF — Safe PDF Editing',
-        short_name: 'myPDF',
-        description: 'Edit, sign, compress, merge and split PDFs entirely in your browser. No uploads. No servers. 100% private.',
+        name: 'myPDFdoc — Safe PDF Editing',
+        short_name: 'myPDFdoc',
+        description: 'Edit, sign, compress, merge and split PDFs entirely in your browser. No uploads. No servers. 100% private. myPDFdoc.',
         theme_color: '#237352',
         background_color: '#f9fafb',
         display: 'standalone',
