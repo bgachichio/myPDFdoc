@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    /* iOS Safari: use dynamic viewport height so browser chrome is accounted for */
+    height: -webkit-fill-available;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    /* Prevent iOS bounce-scroll from exposing bare background */
+    overscroll-behavior: none;
+  }
+  #root {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-xl
+           bg-brand text-white font-semibold text-sm
+           hover:bg-brand-hover active:bg-brand-700
+           transition-all duration-150
+           shadow-sm hover:shadow-md
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-xl
+           bg-white text-brand font-semibold text-sm
+           border-2 border-brand
+           hover:bg-brand-50
+           transition-all duration-150
+           shadow-sm
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-lg
+           text-gray-600 font-medium text-sm
+           hover:bg-brand-50 hover:text-brand
+           transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2;
+  }
+
+  /* ── Nav ── */
+  .nav-link {
+    @apply flex items-center gap-2.5 px-3 py-2 rounded-lg
+           text-gray-600 font-medium text-sm
+           hover:bg-brand-50 hover:text-brand
+           transition-all duration-150;
+  }
+  .nav-link-active {
+    @apply bg-brand-50 text-brand;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm;
+  }
+  .tool-card {
+    @apply card p-5 flex flex-col gap-3 cursor-pointer
+           hover:border-brand-200 hover:shadow-md
+           transition-all duration-200;
+  }
+  .tool-icon {
+    @apply w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center
+           text-brand transition-all duration-200;
+  }
+
+  /* ── Upload zone ── */
+  .dropzone {
+    @apply border-2 border-dashed border-gray-200 rounded-2xl
+           transition-all duration-200 cursor-pointer
+           hover:border-brand hover:bg-brand-50;
+  }
+  .dropzone-active {
+    @apply border-brand bg-brand-50 scale-[1.01];
+  }
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in   { animation: fadeInUp 0.4s ease-out both; }
+.fade-in-1 { animation: fadeInUp 0.4s 0.08s ease-out both; }
+.fade-in-2 { animation: fadeInUp 0.4s 0.16s ease-out both; }
+.fade-in-3 { animation: fadeInUp 0.4s 0.24s ease-out both; }
+.fade-in-4 { animation: fadeInUp 0.4s 0.32s ease-out both; }
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+.pulse-icon { animation: pulse-gentle 2.4s ease-in-out infinite; }
+
+/* scrollbar */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-200 rounded-full; }
